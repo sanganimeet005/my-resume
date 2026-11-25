@@ -19,11 +19,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/resume.css">
   <link rel="icon" type="image/png" href="logo.png">
-
-  <!-- html2pdf library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="resume-page-body">
@@ -47,8 +42,8 @@
           <i class="bi bi-arrow-left"></i>
           <span class="d-none d-md-inline">Portfolio</span>
         </a>
-        <button type="button" id="downloadPdfBtn" class="btn-download-pdf" title="Download Page as PDF">
-          <i class="bi bi-file-earmark-arrow-down-fill"></i>
+        <button type="button" id="downloadPdfBtn" class="btn-download-pdf" title="Print / Save as PDF">
+          <i class="bi bi-printer-fill"></i>
           <span>Download PDF</span>
         </button>
       </div>
@@ -361,103 +356,26 @@
 
 
 
-  <!-- Download Toast Notification -->
-  <div id="downloadToast" class="download-toast no-print" role="status" aria-live="polite">
-    <span id="toastMessage">Downloading resume PDF...</span>
-  </div>
-
-  <!-- Client-side PDF Generation & Direct Download Script -->
+  <!-- Native Print / Save as PDF Script -->
   <script>
     (function () {
-      let toastTimer = null;
+      const originalTitle = document.title;
 
-      function showToast(html, autoHideMs = 0) {
-        const toast = document.getElementById('downloadToast');
-        const toastMessage = document.getElementById('toastMessage');
-        if (!toast || !toastMessage) return;
-        clearTimeout(toastTimer);
-        toastMessage.innerHTML = html;
-        toast.style.display = 'flex';
-        if (autoHideMs > 0) {
-          toastTimer = setTimeout(() => {
-            toast.style.display = 'none';
-          }, autoHideMs);
-        }
-      }
+      window.addEventListener('beforeprint', () => {
+        document.title = 'Meet_Sangani_Resume';
+      });
 
-      function downloadPageAsPDF() {
-        const downloadBtn = document.getElementById('downloadPdfBtn');
-        const resumeElement = document.getElementById('resumeContent');
-        const originalBtnHtml = downloadBtn ? downloadBtn.innerHTML : '';
-
-        if (!resumeElement) {
-          window.print();
-          return;
-        }
-
-        if (downloadBtn) {
-          downloadBtn.disabled = true;
-          downloadBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span><span>Downloading...</span>';
-        }
-
-        showToast('<span class="spinner-border spinner-border-sm text-info me-2" role="status" aria-hidden="true"></span> Generating PDF from page...');
-
-        const opt = {
-          margin: 0,
-          filename: 'Meet_Sangani_Resume.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: {
-            scale: 2,
-            useCORS: true,
-            logging: false,
-            scrollY: 0,
-            scrollX: 0,
-            windowWidth: 1200,
-            backgroundColor: '#ffffff'
-          },
-          jsPDF: {
-            unit: 'mm',
-            format: 'a4',
-            orientation: 'portrait',
-            compress: true
-          },
-          pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-        };
-
-        if (typeof html2pdf !== 'undefined') {
-          html2pdf()
-            .set(opt)
-            .from(resumeElement)
-            .save()
-            .then(() => {
-              showToast('<i class="bi bi-check-circle-fill text-success me-2"></i> PDF downloaded successfully!', 2500);
-            })
-            .catch((err) => {
-              console.warn('html2pdf error, opening print dialog:', err);
-              showToast('<i class="bi bi-printer text-info me-2"></i> Opening print to save as PDF...', 2000);
-              window.print();
-            })
-            .finally(() => {
-              if (downloadBtn) {
-                downloadBtn.disabled = false;
-                downloadBtn.innerHTML = originalBtnHtml;
-              }
-            });
-        } else {
-          window.print();
-          if (downloadBtn) {
-            downloadBtn.disabled = false;
-            downloadBtn.innerHTML = originalBtnHtml;
-          }
-        }
-      }
+      window.addEventListener('afterprint', () => {
+        document.title = originalTitle;
+      });
 
       document.addEventListener('DOMContentLoaded', () => {
         const downloadBtn = document.getElementById('downloadPdfBtn');
         if (downloadBtn) {
           downloadBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            downloadPageAsPDF();
+            document.title = 'Meet_Sangani_Resume';
+            window.print();
           });
         }
       });
