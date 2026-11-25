@@ -1,0 +1,1148 @@
+/* ===================================================================
+   MEET SANGANI - 1-PAGE EXECUTIVE COLORFUL RESUME
+   Exact A4 dimensions (210mm x 297mm), 2-Column Sidebar Layout
+   =================================================================== */
+
+:root {
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bg-sidebar: #090e1c;
+  --bg-sidebar-alt: #0e172e;
+  --primary-blue: #2563eb;
+  --accent-cyan: #0284c7;
+  --accent-purple: #7c3aed;
+  --accent-emerald: #059669;
+  --accent-amber: #d97706;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --pill-radius: 50px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.resume-page-body {
+  font-family: var(--font-main);
+  background-color: #0b1120;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   RESUME NAVBAR
+   ========================================== */
+.resume-navbar {
+  background-color: #000000;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-nav-profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 10%;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.resume-nav-brand-title {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-nav-role-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 2px 10px;
+  border-radius: var(--pill-radius);
+}
+
+.nav-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-nav-portfolio {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: var(--pill-radius);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-nav-portfolio:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-download-pdf {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 9px 20px;
+  border-radius: var(--pill-radius);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-download-pdf:hover {
+  background: linear-gradient(135deg, #0369a1, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.6);
+}
+
+.btn-print-resume {
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: var(--pill-radius);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-print-resume:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================
+   RESUME MAIN WRAPPER & A4 SHEET (1-PAGE)
+   ========================================== */
+.resume-main-wrapper {
+  padding: 24px 15px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Exact A4 Ratio Container (210mm x 297mm) */
+.resume-container-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ==========================================
+   LEFT SIDEBAR (33% WIDTH) - DARK & COLORFUL
+   ========================================== */
+.resume-sidebar {
+  width: 33%;
+  background: linear-gradient(180deg, #090e1c 0%, #0e172e 50%, #0a1122 100%);
+  color: #e2e8f0;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 3px solid #0284c7;
+  box-sizing: border-box;
+}
+
+/* Profile Photo & Name in Sidebar */
+.sidebar-profile-block {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sidebar-avatar-frame {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+  overflow: hidden;
+  background-color: #1e293b;
+}
+
+.sidebar-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+
+.sidebar-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+}
+
+.sidebar-role {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Sidebar Section Headers */
+.sidebar-heading {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 7px 0 4px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sidebar-heading i {
+  color: #38bdf8;
+  font-size: 0.82rem;
+}
+
+/* Contact & Info Items */
+.sidebar-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+}
+
+.sidebar-icon-wrap {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.icon-web {
+  background-color: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+}
+
+.icon-mail {
+  background-color: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.icon-phone {
+  background-color: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+}
+
+.icon-loc {
+  background-color: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+}
+
+.icon-lang {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.icon-avail {
+  background-color: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+.sidebar-contact-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-contact-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar-contact-link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.sidebar-website-highlight {
+  color: #38bdf8 !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Education List */
+.sidebar-edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.sidebar-edu-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 5px 8px;
+  border-left: 2.5px solid #38bdf8;
+}
+
+.sidebar-edu-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.sidebar-edu-sub {
+  font-size: 0.67rem;
+  color: #94a3b8;
+  margin: 1px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Certificates (Featuring Shree Academy Rajkot) */
+.sidebar-cert-featured {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 78, 59, 0.25) 100%);
+  border: 1.5px solid #10b981;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-bottom: 5px;
+}
+
+.sidebar-cert-badge {
+  display: inline-block;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.sidebar-cert-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #6ee7b7;
+  margin: 0 0 1px;
+  line-height: 1.2;
+}
+
+.sidebar-cert-issuer {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sidebar-cert-secondary {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 5px 8px;
+  border-left: 2.5px solid #c084fc;
+}
+
+.sidebar-cert-sec-title {
+  font-size: 0.71rem;
+  font-weight: 700;
+  color: #e9d5ff;
+  margin: 0;
+}
+
+.sidebar-cert-sec-sub {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  margin: 1px 0 0;
+}
+
+/* Technical Skills Pills */
+.sidebar-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.sidebar-skill-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2.5px 7px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.skill-py {
+  background-color: #fef08a;
+  color: #713f12;
+}
+
+.skill-react {
+  background-color: #00d8ff;
+  color: #082f49;
+}
+
+.skill-django {
+  background-color: #10b981;
+  color: #022c22;
+}
+
+.skill-flask {
+  background-color: #a7f3d0;
+  color: #064e3b;
+}
+
+.skill-db {
+  background-color: #38bdf8;
+  color: #0c4a6e;
+}
+
+.skill-api {
+  background-color: #fed7aa;
+  color: #7c2d12;
+}
+
+.skill-figma {
+  background-color: #f472b6;
+  color: #701a75;
+}
+
+.skill-uiux {
+  background-color: #c084fc;
+  color: #3b0764;
+}
+
+.skill-git {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* ==========================================
+   RIGHT MAIN CONTENT (67% WIDTH) - CRISP & DENSE
+   ========================================== */
+.resume-main-content {
+  width: 67%;
+  padding: 22px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Header Area */
+.main-header-block {
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.main-name-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin: 0 0 3px;
+  line-height: 1.1;
+}
+
+.main-role-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.main-role-badge {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: var(--pill-radius);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.main-summary-text {
+  font-size: 0.77rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Main Section Heading */
+.main-section-heading {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 8px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.main-section-heading i {
+  color: #0284c7;
+  font-size: 0.92rem;
+}
+
+/* Compact Project Cards */
+.main-project-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 7px;
+  border-left: 3.5px solid #2563eb;
+  position: relative;
+}
+
+.card-flask {
+  border-left-color: #059669;
+}
+
+.card-django {
+  border-left-color: #047857;
+}
+
+.card-react {
+  border-left-color: #0284c7;
+}
+
+.card-figma {
+  border-left-color: #7c3aed;
+}
+
+.main-proj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.main-proj-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.main-proj-tags {
+  display: flex;
+  gap: 4px;
+}
+
+.proj-tag-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1.5px 6px;
+  border-radius: var(--pill-radius);
+}
+
+.tag-flask-bg {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.tag-django-bg {
+  background-color: #064e3b;
+  color: #ffffff;
+}
+
+.tag-react-bg {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.tag-py-bg {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.tag-db-bg {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.tag-figma-bg {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.tag-ux-bg {
+  background-color: #fce7f3;
+  color: #9d174d;
+}
+
+.main-proj-desc {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0 0 3px;
+}
+
+.main-proj-bullets {
+  margin: 0;
+  padding-left: 14px;
+  font-size: 0.71rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.main-proj-bullets li {
+  margin-bottom: 1.5px;
+}
+
+/* Figma Section Grid (3 Columns) */
+.figma-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.figma-mini-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 7px 8px;
+  border-top: 3px solid #7c3aed;
+  display: flex;
+  flex-direction: column;
+}
+
+.figma-mini-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 3px;
+  line-height: 1.25;
+}
+
+.figma-mini-desc {
+  font-size: 0.67rem;
+  color: #475569;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Bottom Footer Strip inside A4 Sheet */
+.resume-doc-footer-strip {
+  border-top: 1.5px solid #e2e8f0;
+  padding-top: 6px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.67rem;
+  color: #64748b;
+}
+
+.resume-doc-footer-strip a {
+  color: #0284c7;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resume-doc-footer-strip a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   DOWNLOAD TOAST NOTIFICATION
+   ========================================== */
+.download-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #090e1c;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 2000;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* ==========================================
+   EXACT 1-PAGE PRINT MEDIA QUERY (@media print)
+   ========================================== */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  .resume-navbar,
+  .download-toast {
+    display: none !important;
+  }
+
+  .resume-main-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .resume-container-sheet {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow: hidden !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-sidebar {
+    width: 33% !important;
+    background: linear-gradient(180deg, #090e1c 0%, #0e172e 50%, #0a1122 100%) !important;
+    border-right: 3px solid #0284c7 !important;
+    border-bottom: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-main-content {
+    width: 67% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .figma-grid-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Responsive adjustment strictly for screen devices, NEVER print */
+@media screen and (max-width: 860px) {
+  html,
+  body.resume-page-body {
+    overflow-x: hidden;
+  }
+
+  .resume-main-wrapper {
+    padding: 16px 12px 36px;
+  }
+
+  .resume-container-sheet {
+    width: 100%;
+    max-width: 720px;
+    min-height: auto;
+    max-height: none;
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .resume-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #0284c7;
+    padding: 24px 22px;
+    justify-content: flex-start;
+    gap: 18px;
+  }
+
+  .sidebar-profile-block {
+    margin-bottom: 0;
+  }
+
+  .sidebar-avatar-frame {
+    width: 112px;
+    height: 112px;
+  }
+
+  .sidebar-name {
+    font-size: 1.25rem;
+  }
+
+  .sidebar-role {
+    font-size: 0.85rem;
+  }
+
+  .sidebar-heading {
+    font-size: 0.85rem;
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+  }
+
+  .sidebar-heading i {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-contact-item {
+    font-size: 0.82rem;
+    min-width: 0;
+  }
+
+  .sidebar-contact-text {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .sidebar-cert-featured {
+    padding: 10px 12px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-cert-badge {
+    font-size: 0.65rem;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-cert-title {
+    font-size: 0.86rem;
+  }
+
+  .sidebar-cert-issuer {
+    font-size: 0.78rem;
+  }
+
+  .sidebar-edu-list {
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .sidebar-edu-card {
+    padding: 8px 10px;
+  }
+
+  .sidebar-edu-title {
+    font-size: 0.84rem;
+  }
+
+  .sidebar-edu-sub {
+    font-size: 0.76rem;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+
+  .sidebar-skills-wrap {
+    gap: 6px;
+  }
+
+  .sidebar-skill-badge {
+    font-size: 0.76rem;
+    padding: 4px 10px;
+  }
+
+  .resume-main-content {
+    width: 100%;
+    padding: 22px 22px 20px;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .main-header-block {
+    margin-bottom: 4px;
+    padding-bottom: 12px;
+  }
+
+  .main-name-title {
+    font-size: 1.75rem;
+  }
+
+  .main-role-badge {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    display: inline-block;
+  }
+
+  .main-summary-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .main-section-heading {
+    font-size: 0.94rem;
+    margin: 4px 0 10px;
+    padding-bottom: 5px;
+  }
+
+  .main-section-heading i {
+    font-size: 0.98rem;
+  }
+
+  .main-project-card {
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+
+  .main-proj-header {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    margin-bottom: 6px;
+  }
+
+  .main-proj-title {
+    font-size: 0.94rem;
+  }
+
+  .main-proj-tags {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .proj-tag-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .main-proj-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .main-proj-bullets {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .main-proj-bullets li {
+    margin-bottom: 3px;
+  }
+
+  .figma-grid-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .figma-mini-card {
+    padding: 10px 11px;
+  }
+
+  .figma-mini-title {
+    font-size: 0.84rem;
+  }
+
+  .figma-mini-desc {
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .resume-doc-footer-strip {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding-top: 10px;
+    margin-top: 2px;
+    font-size: 0.76rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .resume-main-wrapper {
+    padding: 12px 10px 28px;
+  }
+
+  .resume-container-sheet {
+    border-radius: 10px;
+  }
+
+  .resume-sidebar {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .sidebar-contact-list {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .resume-main-content {
+    padding: 18px 16px;
+  }
+
+  .figma-grid-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resume-doc-footer-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .resume-doc-footer-strip a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .download-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+
+  #pdfPreviewModal .modal-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #pdfPreviewModal .modal-body {
+    height: 75vh !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .resume-navbar {
+    padding: 10px 0;
+  }
+
+  .resume-nav-brand-title {
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .nav-actions-group {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .btn-nav-portfolio {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .btn-download-pdf {
+    padding: 6px 11px;
+    font-size: 0.78rem;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .main-name-title {
+    font-size: 1.45rem;
+  }
+
+  .main-role-badge {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  .main-section-heading {
+    font-size: 0.86rem;
+  }
+
+  .main-proj-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
